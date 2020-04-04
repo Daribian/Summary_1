@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}" type="text/css" >
+    <title>Web_Developed</title>
+</head>
+<body>
+    <header class="header">
+        <div class="head_fon">
+            <img src="{% static 'clav.png' %}">
+            <div class="container_1">
+                <p class="my_name">Моё имя - Кирилл и я</p>
+                <p class="my_full">FULL-STACK WEB DEVELOPED</p>
+                <p class="my_ready">Готовый выполнить любой ваш заказ!</p>
+                <a href="#service_id" class="input_buttom">
+                <svg class="bi bi-chevron-down" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"/>
+                </svg></a>
+            </div>
+        </div>
+    </header>
+    <section class="section" id="service_id">
+        <div class="container_menu">
+            <ul class="menu">
+                <a href="#service_id" class="#id_serv"><li class="services">Услуги</li></a>
+                <a href="#port_id" class="#id_port"><li class="portfolio">Портволио</li></a>
+                <a href="#skill_id" class="#id_skill"><li class="skills">Навыки</li></a>
+                <a href="#about_id" class="#id_about"><li class="about_me">Обо мне</li></a>
+                <a href="#cont_id" class="#id_cont"><li class="contacts">Контакты</li></a>
+            </ul>
+        </div>
+    
+        <div class="servic">
+            <h class="serv">Мои услуги</h>
+            <div class="row">
+                <div class="backend col-6">
+                    <div class="one">
+                        <img src="{% static 'monitor.png' %}" class="back">
+                        <p class="back_designation">BACK-END DEVELOPMENT</p>
+                        <h class="back_text">Разрабатываю и совершенствую технические решения для вашего сайта!</h>
+                    </div>
+                </div>
+                <div class="frontend col-6">
+                    <div class="two">
+                        <img src="{% static 'frontend.png' %}" class="front">
+                        <p class="front_designation">FRONT-END DEVELOPMENT</p>
+                        <h class="front_text">Создаю визуально красивые и адаптивные сайты, а так же дополняю уже существующие!</h>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="port" id="port_id">
+            <h class="my_port">Портфолио</h>
+            <div class="all_port"></div>
+        </div>
+        <div class="skill" id="skill_id">
+            <h class="my_skill">Мои навыки</h>
+            <div class="skill_img">
+                <img src="{% static 'Django.png' %}" class="img_1">
+                <img src="{% static 'Python_logo_icon.png' %}" class="img_2">
+                <img src="{% static 'html.png' %}" class="img_3">
+                <img src="{% static 'css.png' %}" class="img_4">
+            </div>
+            <div class="skill_text">
+                <h class="col-4">Знаю и разрабатываю на лучшем фреймворке - Django!</h>
+                <h class="col-4">Использую один из самых популярных языков программирования - Python!</h>
+                <h class="col-4">Пишу красивые сайты с помощью HTML5 и CSS!</h>
+            </div>
+        </div>
+        <div class="about_me_all" id="about_id">
+            <h class="my_about">Обо мне</h>
+            <div class="about_logo">
+                <img src="{% static 'ochki.png' %}" class="logo_me">
+            </div>
+            <div class="about_me_text">
+                <p><h class="d1">1.</h><h class="my_age"> Мой возраст </h> - <h class="my_19">19 лет</h></p>
+                <p><h class="d1">2.</h><h class="my_profession"> Моя профессия </h> - <h class="my_prog">"Программирование комьютерных сетей"</h></p>
+                <p><h class="d1">3.</h><h class="my_frilance"> Фриланс </h> - <h class="my_money">мой единственный источник дохода</h></p>
+                <p><h class="d1">4.</h><h class="my_too"> Слишком сильный перфекционист </h> - <h class="my_job">что оказывает глубочаюшее влияние на работу, получая идеально работающие сайты</h></p>
+            </div>
+        </div>
+        <div class="contact" id="cont_id">
+            <h class="contact_text">Контакты</h>
+            <h class="please_text">Пожалуйста, оставьте свои контактные<br> данные что бы я смог с вами как<br> можно быстрее связаться!</h>
+            <form class="form_contact" action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div>
+                    <input type="submit" name="submit" value="Отправить" class="form_button">
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
